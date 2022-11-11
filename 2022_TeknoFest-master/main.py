@@ -54,9 +54,7 @@ def searching():
             check=support.sleep_function(5,'t',cap,out,pwmx,speed=340)
             if check==0:
                 break
-            
-        # bu silinicek
-        #break
+
 #Motorlara güç verilir.
 motor_function.start(1)
 #PCA9685 objesi pwmx değişkenşne atanır
