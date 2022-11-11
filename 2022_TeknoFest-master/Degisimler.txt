@@ -1,0 +1,35 @@
+11.08.2021:
+1-motor sağ ve sol dönüş 330'dan 325'e düşürüldü.
+2-Güdümlenme algoritasında merkezleme işlemi için sağ dönüş yerine yengece geçildi.
+3-Güdümlenme algoritmasında y-ekseni içinde merkezleme kodu eklenildi.
+4-Berkin koduna for'dan önce center_2=[None,None] eklendi.
+5-Sağ sol dönüşlerde ileri kodunda set edilen motorlar takılı kalmaması amacıyl, sağ veya sol fonksiyonunda çalışan
+2 motor haricindeki diğer yatay eksendeki motorlar 318 (motor durgun) değerine set edildi.
+6-Arama algoritmasına 2 saniyelik aşağı inme eklendi.
+7-Mission_2 değiştirildi. Mission_1'e geçildi.
+8-Mission modüllerinin içindeki detection fonsiyonların ismi image_process() olarak eğiştirildi.
+9-Support modülüne 'import Mission_? as Mission' eklendi.
+!0- Böylece sadece ? işareti değiştirerek görev değiştirilecek
+
+
+14.08.2021:
+1-support modülünün sleep_function fonksiyonunda açı için değişimde güdümlenme döngüsü if değeri içine alındı
+daha sonra döngüden sonra eğer center_g== None ise break komutu eklendi. Böylece araç takılı kalmıcak. Arama algoritmasının bir sonraki adımına geçicek
+2-güdümlenme algoritmasında merkezi toleranslar 200'e çıkartıldı.
+3-Y-ekseni için merkezleme hareketi ters düşünülmüş düzeltmeler yapıldı.
+4-Y-ekseni için merkezi alandaysa durma komutu eklendi.
+5-Mission 2 güncellendi.
+
+
+17.08.2021
+1-Support dosyasına fps sayacı eklendi ekrana bastırılıyor.
+2-main dosyasına 2. kamera objesi alınması için kod yazıldı.
+3-support fonksiyonu artık 2. kamera objesinide girdi olarak alıyor.
+4-bütün görevlerdeki güdümlenme artık 2. kamera objesi ve kayıt için objeyide girdi olarak alıyor.
+3-Mission2'de çok değişim var:
+          *afk fonksiyonu eklendi alt kamera üzerinden kırmızı rengi için filtreleme yapıyor.
+          *fatality fonksiyonu eklendi. Belli bir konumdan sonra bu fonksiyon kullanılacak. bu kod 5 saniye ileri giderken alt kamera ile kırmızı rengi arar
+          eğer alt kamerada kırmızı rengi görürse fatality güdümlenmeye gider. Eğer 5 saniye boyunca bir şey göremezse aşağı batar ve aracı kapatır.
+          *fatality_güdümlenme fonksiyonu ekledi.Bu kod görüntü işlemeden gelen renk yoğunluğunun merkezine göre hareket kombinasyonu uygular eğer 
+          merkez belirlenen koordinat kümesi içinde ise aracı batırır ve kapatır.
+          (Yani arkadaşlar olaylar çok karıştı.)
