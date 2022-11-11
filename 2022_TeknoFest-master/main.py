@@ -74,7 +74,7 @@ aracı gyo dan gelen verilere göre havuza paralel konuma getirecektir. searchin
 #A delay is added for the desired time.
 print("Süre başladı")
 time.sleep(25)
-#Araç 0 noktasına çekilir
+
 
 start_time=time.time()
 end_time=0
